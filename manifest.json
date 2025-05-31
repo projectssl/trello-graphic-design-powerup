@@ -5,6 +5,9 @@
   "icon": {
     "url": "./icon.png"
   },
+  "entry": {
+    "client": "client.js"
+  },
   "capabilities": {
     "card-buttons": [
       {
@@ -18,9 +21,6 @@
         "callback": "openBoardForm"
       }
     ]
-  },
-  "entry": {
-    "client": "client.js"
   },
   "connectors": {},
   "permissions": {
