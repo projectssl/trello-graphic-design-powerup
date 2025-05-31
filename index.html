@@ -70,33 +70,35 @@
   </form>
 
   <script>
-    const t = TrelloPowerUp.iframe();
+    document.addEventListener('DOMContentLoaded', function () {
+      const t = TrelloPowerUp.iframe();
 
-    document.getElementById('designForm').addEventListener('submit', async function(e) {
-      e.preventDefault();
-      const form = e.target;
+      document.getElementById('designForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const form = e.target;
 
-      const data = {
-        designNeed: form.designNeed.value,
-        sizeFormat: form.sizeFormat.value,
-        copyText: form.copyText.value,
-        branding: form.branding.value,
-        references: form.references.value,
-        deadline: form.deadline.value,
-        priority: form.priority.value
-      };
+        const data = {
+          designNeed: form.designNeed.value,
+          sizeFormat: form.sizeFormat.value,
+          copyText: form.copyText.value,
+          branding: form.branding.value,
+          references: form.references.value,
+          deadline: form.deadline.value,
+          priority: form.priority.value
+        };
 
-      const formatted = `**Design Brief**\n\n- **Design Needed:** ${data.designNeed}\n- **Size & Format:** ${data.sizeFormat}\n- **Copy/Text:** ${data.copyText}\n- **Branding Details:** ${data.branding}\n- **Reference/Examples:** ${data.references}\n- **Deadline:** ${data.deadline}\n- **Priority:** ${data.priority}`;
+        const formatted = `**Design Brief**\n\n- **Design Needed:** ${data.designNeed}\n- **Size & Format:** ${data.sizeFormat}\n- **Copy/Text:** ${data.copyText}\n- **Branding Details:** ${data.branding}\n- **Reference/Examples:** ${data.references}\n- **Deadline:** ${data.deadline}\n- **Priority:** ${data.priority}`;
 
-      const list = await t.list('id');
-      await t.getRestApi().post('/1/cards', {
-        name: data.designNeed || 'New Design Request',
-        idList: list.id,
-        desc: formatted
+        const list = await t.list('id');
+        await t.getRestApi().post('/1/cards', {
+          name: data.designNeed || 'New Design Request',
+          idList: list.id,
+          desc: formatted
+        });
+
+        await t.comment(`New design request submitted:\n\n${formatted}`);
+        t.closePopup();
       });
-
-      await t.comment(`New design request submitted:\n\n${formatted}`);
-      t.closePopup();
     });
   </script>
 </body>
