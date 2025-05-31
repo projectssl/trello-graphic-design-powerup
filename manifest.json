@@ -6,19 +6,8 @@
     "client": "client.js"
   },
   "capabilities": {
-    "board-buttons": [
-      {
-        "text": "Submit a New Idea",
-        "callback": "openDesignIdeaCreator"
-      }
-    ],
-    "card-buttons": [
-      {
-        "text": "📝 Submit a New Design Request",
-        "condition": "always",
-        "callback": "showDesignForm"
-      }
-    ],
+    "card-buttons": true,
+    "board-buttons": true,
     "card-back-section": {
       "title": "Design Brief",
       "icon": "./icon.png",
@@ -26,15 +15,13 @@
       "height": 400
     }
   },
-  "connectors": {},
   "icon": {
     "url": "./icon.png"
   },
+  "connectors": {},
   "permissions": {
     "external": {
-      "urls": [
-        "https://projectssl.github.io"
-      ]
+      "urls": ["https://projectssl.github.io"]
     }
   }
 }
