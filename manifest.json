@@ -1,0 +1,23 @@
+{
+  "name": "Graphic Design Request",
+  "description": "Collects detailed brief info when a card is created in 'Ideas and Requests'.",
+  "author": "Your Name or STEF Marketing",
+  "capabilities": {
+    "card-buttons": [],
+    "card-back-section": {
+      "title": "Design Brief",
+      "icon": "./icon.png",
+      "url": "./index.html",
+      "height": 400
+    }
+  },
+  "connectors": {},
+  "icon": {
+    "url": "./icon.png"
+  },
+  "permissions": {
+    "external": {
+      "urls": []
+    }
+  }
+}
