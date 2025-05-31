@@ -32,7 +32,9 @@
   },
   "permissions": {
     "external": {
-      "urls": []
+      "urls": [
+        "https://projectssl.github.io"
+      ]
     }
   }
 }
