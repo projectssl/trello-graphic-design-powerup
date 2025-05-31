@@ -13,6 +13,7 @@ window.TrelloPowerUp.initialize({
       }
     }];
   },
+
   'board-buttons': function(t) {
     return [{
       text: 'Submit a New Idea',
