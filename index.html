@@ -88,9 +88,15 @@
 
       const formatted = `**Design Brief**\n\n- **Design Needed:** ${data.designNeed}\n- **Size & Format:** ${data.sizeFormat}\n- **Copy/Text:** ${data.copyText}\n- **Branding Details:** ${data.branding}\n- **Reference/Examples:** ${data.references}\n- **Deadline:** ${data.deadline}\n- **Priority:** ${data.priority}`;
 
-      await t.set('card', 'shared', 'designBrief', data);
-      await t.set('card', 'shared', 'designFormatted', formatted);
-      await t.set('card', 'desc', formatted);
+      // Create a new card in the same list
+      const card = await t.card();
+      const list = await t.list('id');
+      const response = await t.getRestApi().post('/1/cards', {
+        name: data.designNeed || 'New Design Request',
+        idList: list.id,
+        desc: formatted
+      });
+
       await t.comment(`New design request submitted:\n\n${formatted}`);
       t.closePopup();
     });
