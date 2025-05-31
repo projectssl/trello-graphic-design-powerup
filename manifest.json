@@ -6,8 +6,18 @@
     "client": "client.js"
   },
   "capabilities": {
-    "card-buttons": true,
-    "board-buttons": true
+    "card-buttons": [
+      {
+        "text": "📝 Submit a New Design Request",
+        "callback": "openCardForm"
+      }
+    ],
+    "board-buttons": [
+      {
+        "text": "Submit a New Idea",
+        "callback": "openBoardForm"
+      }
+    ]
   },
   "icon": {
     "url": "./icon.png"
