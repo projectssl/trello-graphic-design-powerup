@@ -1,7 +1,7 @@
 window.TrelloPowerUp.initialize({
-  'card-buttons': function(t, options) {
+  'card-buttons': function(t) {
     return [{
-      icon: 'https://cdn-icons-png.flaticon.com/512/1828/1828817.png', // optional
+      icon: 'https://cdn-icons-png.flaticon.com/512/1828/1828817.png',
       text: '📝 Submit a New Design Request',
       callback: function(t) {
         return t.modal({
@@ -13,8 +13,7 @@ window.TrelloPowerUp.initialize({
       }
     }];
   },
-
-  'board-buttons': function(t, options) {
+  'board-buttons': function(t) {
     return [{
       text: 'Submit a New Idea',
       callback: function(t) {
