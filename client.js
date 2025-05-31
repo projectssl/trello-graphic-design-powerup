@@ -1,5 +1,9 @@
+// client.js - Trello Power-Up main logic
 window.TrelloPowerUp.initialize({
-  'card-buttons': function(t) {
+
+  // Card-level button (appears on the back of a Trello card)
+  'card-buttons': function(t, options) {
+    console.log('🟢 card-buttons registered');
     return [{
       icon: 'https://cdn-icons-png.flaticon.com/512/1828/1828817.png',
       text: '📝 Submit a New Design Request',
@@ -7,15 +11,20 @@ window.TrelloPowerUp.initialize({
     }];
   },
 
-  'board-buttons': function(t) {
+  // Board-level button (top right of board)
+  'board-buttons': function(t, options) {
+    console.log('🟢 board-buttons registered');
     return [{
       text: 'Submit a New Idea',
       callback: openBoardForm
     }];
   }
+
 });
 
+// Opens the modal from the card button
 function openCardForm(t) {
+  console.log('🔵 openCardForm triggered');
   return t.modal({
     url: './index.html',
     fullscreen: false,
@@ -24,7 +33,9 @@ function openCardForm(t) {
   });
 }
 
+// Opens the modal from the board button
 function openBoardForm(t) {
+  console.log('🔵 openBoardForm triggered');
   return t.modal({
     url: './index.html',
     fullscreen: false,
@@ -32,3 +43,4 @@ function openBoardForm(t) {
     height: 500
   });
 }
+
