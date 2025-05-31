@@ -1,9 +1,8 @@
-<!-- index.html - Main UI for the Trello Power-Up Sidebar Form -->
+<!-- index.html - Trello Power-Up UI -->
 <html>
 <head>
   <meta charset="utf-8" />
   <script src="https://p.trellocdn.com/power-up.min.js"></script>
-  <script src="./client.js"></script>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -90,7 +89,7 @@
       const formatted = `**Design Brief**\n\n- **Design Needed:** ${data.designNeed}\n- **Size & Format:** ${data.sizeFormat}\n- **Copy/Text:** ${data.copyText}\n- **Branding Details:** ${data.branding}\n- **Reference/Examples:** ${data.references}\n- **Deadline:** ${data.deadline}\n- **Priority:** ${data.priority}`;
 
       const list = await t.list('id');
-      const response = await t.getRestApi().post('/1/cards', {
+      await t.getRestApi().post('/1/cards', {
         name: data.designNeed || 'New Design Request',
         idList: list.id,
         desc: formatted
