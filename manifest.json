@@ -1,25 +1,39 @@
-"entry": {
-  "client": "client.js"
-},
-"capabilities": {
-  "card-buttons": [
-    {
-      "text": "📝 Submit a New Design Request",
-      "callback": "openCardForm"
-    }
-  ],
-  "board-buttons": [
-    {
-      "text": "Submit a New Idea",
-      "callback": "openBoardForm"
-    }
-  ]
-},
-"entryPoints": {
-  "openCardForm": {
-    "url": "./index.html"
+{
+  "name": "Graphic Design Request",
+  "description": "Collects detailed design briefs from clients.",
+  "author": "Sarah Louise – Steph Marketing",
+  "entry": {
+    "client": "client.js"
   },
-  "openBoardForm": {
-    "url": "./index.html"
+  "capabilities": {
+    "card-buttons": [
+      {
+        "text": "📝 Submit a New Design Request",
+        "callback": "openCardForm"
+      }
+    ],
+    "board-buttons": [
+      {
+        "text": "Submit a New Idea",
+        "callback": "openBoardForm"
+      }
+    ]
+  },
+  "entryPoints": {
+    "openCardForm": {
+      "url": "./index.html"
+    },
+    "openBoardForm": {
+      "url": "./index.html"
+    }
+  },
+  "icon": {
+    "url": "./icon.png"
+  },
+  "connectors": {},
+  "permissions": {
+    "external": {
+      "urls": ["https://projectssl.github.io"]
+    }
   }
 }
