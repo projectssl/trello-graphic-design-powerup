@@ -1,7 +1,10 @@
 {
   "name": "Graphic Design Request",
   "description": "Collects detailed design briefs from clients.",
-  "author": "Sarah Louise – STEF Marketing",
+  "author": "Sarah Louise – Steph Marketing",
+  "entry": {
+    "client": "client.js"
+  },
   "capabilities": {
     "board-buttons": [
       {
