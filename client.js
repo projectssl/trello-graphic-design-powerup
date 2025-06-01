@@ -1,14 +1,13 @@
-console.log("🚀 client.js loaded");
+console.log("🚨🚨🚨 THIS IS FROM CLIENT.JS – If you don’t see this, the Power-Up isn’t loading.");
 
-// Check if TrelloPowerUp is available
 if (typeof window.TrelloPowerUp === 'undefined') {
-  console.error("❌ TrelloPowerUp is undefined! Is the script loaded too early?");
+  console.error("❌ TrelloPowerUp is undefined! Is the Power-Up SDK loaded?");
 } else {
-  console.log("✅ TrelloPowerUp is available, initializing Power-Up...");
+  console.log("✅ TrelloPowerUp is available, initializing...");
 
   window.TrelloPowerUp.initialize({
     'card-buttons': function(t) {
-      console.log("🔘 Initializing card-buttons");
+      console.log("🔘 Card button initialized");
       return [{
         icon: 'https://cdn-icons-png.flaticon.com/512/1828/1828817.png',
         text: '📝 Submit a New Design Request',
@@ -16,7 +15,7 @@ if (typeof window.TrelloPowerUp === 'undefined') {
       }];
     },
     'board-buttons': function(t) {
-      console.log("📌 Initializing board-buttons");
+      console.log("📌 Board button initialized");
       return [{
         text: 'Submit a New Idea',
         callback: 'openBoardForm'
@@ -29,8 +28,6 @@ if (typeof window.TrelloPowerUp === 'undefined') {
         fullscreen: false,
         title: 'Design Brief Form',
         height: 500
-      }).catch(err => {
-        console.error("❌ Error opening card modal:", err);
       });
     },
     'openBoardForm': function(t) {
@@ -40,8 +37,6 @@ if (typeof window.TrelloPowerUp === 'undefined') {
         fullscreen: false,
         title: 'Submit Design Idea',
         height: 500
-      }).catch(err => {
-        console.error("❌ Error opening board modal:", err);
       });
     }
   });
