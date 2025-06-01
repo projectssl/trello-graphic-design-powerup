@@ -21,10 +21,10 @@
   },
   "entryPoints": {
     "openCardForm": {
-      "url": "./index.html"
+      "url": "https://projectssl.github.io/Test/index.html"
     },
     "openBoardForm": {
-      "url": "./index.html"
+      "url": "https://projectssl.github.io/Test/index.html"
     }
   },
   "icon": {
