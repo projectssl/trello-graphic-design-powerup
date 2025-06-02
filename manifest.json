@@ -16,7 +16,7 @@
   "entry": {
     "client": "client.js"
   },
-  "entryPoints": {
+ "entryPoints": {
     "showAlert": {
       "url": "./index.html"
     }
