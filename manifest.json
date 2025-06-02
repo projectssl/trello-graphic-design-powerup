@@ -1,5 +1,5 @@
 {
-  "name": "Test Power-Up",
+  "name": "New Test",
   "description": "A simple Trello Power-Up for testing.",
   "author": "Sarah Louise – Steph Marketing",
   "icon": {
@@ -16,9 +16,10 @@
   "entry": {
     "client": "client.js"
   },
- "entryPoints": {
+  "entryPoints": {
     "showAlert": {
-      "url": "./index.html"
+      "url": "./index.html",
+      "type": "iframe"
     }
   }
 }
